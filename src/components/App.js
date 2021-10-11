@@ -1,13 +1,12 @@
-import '../styles/App.css';
+import React, { Component } from 'react'
+//import LinkList from './LinkList'
+import CreateLink from './CreateLink'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">      
-        <p>Hey Hey CSA!</p>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    //return <LinkList />
+    return <CreateLink />
+  }
 }
 
-export default App;
+export default App
