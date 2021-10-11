@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Login from './Login'
 import LinkList from './LinkList'
 import CreateLink from './CreateLink'
 import Header from './Header'
@@ -13,11 +14,12 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LinkList} />
             <Route exact path="/create" component={CreateLink} />
+            <Route exact path="/login" component={Login} />
           </Switch>
         </div>
       </div>
     )
-  }
+  }  
   
 }
 
