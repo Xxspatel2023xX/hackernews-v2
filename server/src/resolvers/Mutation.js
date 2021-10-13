@@ -17,6 +17,15 @@ async function post(parent, args, context, info) {
   return newLink;
 }
 
+function post(parent, { url, description }, ctx, info) {
+  const userId = getUserId(ctx)
+  return ctx.db.mutation.createLink(
+    { data: { url, description, postedBy: { connect: { id: userId } } } },
+    info,
+  )
+}
+
+
 async function signup(parent, args, context, info) {
   const password = await bcrypt.hash(args.password, 10);
   const user = await context.prisma.user.create({
